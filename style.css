@@ -1,0 +1,81 @@
+:root {
+    --bs-primary: #031c24;
+    --bs-secondary: #45bdf5;
+    --bs-tertiary: #f0ab35;
+}
+
+body {
+    font-size: 1rem;
+    font-family: "Roboto", sans-serif;
+}
+a {
+    text-decoration: none;
+    color: var(--bs-tertiary);
+}
+
+#navbarHeader {
+    background-color: #031c24;
+    color: #45bdf5;
+}
+
+.about-section h2, .contact-section h2 {
+    color: #ffffff;
+}
+
+.about-desc {
+    font-size: 1.1rem;
+}
+
+li a {
+    color: #f0ab35;
+    text-decoration: none;
+}
+
+.navbar-brand {
+    gap: 0.5rem;
+}
+
+.navbar-brand h3 {
+    margin-bottom: 0;
+}
+
+.comfy-logo {
+    border-radius: 50%;
+}
+
+main {
+    background: linear-gradient(to right, #031c24, #0c3e4f);
+}
+
+.main-text h1 {
+    color: #45bdf5;
+}
+
+.main-text p {
+    color: #ffffff;
+}
+
+.join-button {
+    background-color: var(--bs-secondary);
+    color: var(--bs-primary);
+    padding: 0.5rem 1rem;
+    font-weight: 500;
+    font-size: 1.3rem;
+}
+
+.join-button:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+    box-shadow: 2px 2px 3px 1px rgba(69, 189, 245, 0.5);
+    background: linear-gradient(to left, #4fbdf0,#45bdf5);
+    transition: all 0.5s ease-out;
+}
+
+.card {
+    border: 3px solid var(--bs-tertiary)
+}
+
+.card img {
+    object-fit: cover;
+    height: 27.5rem;
+}
