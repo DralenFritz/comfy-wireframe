@@ -8,6 +8,7 @@ body {
     font-size: 1rem;
     font-family: "Roboto", sans-serif;
 }
+
 a {
     text-decoration: none;
     color: var(--bs-tertiary);
@@ -78,4 +79,28 @@ main {
 .card img {
     object-fit: cover;
     height: 27.5rem;
+}
+
+.pricing-card {
+    border: 3px solid var(--bs-secondary)
+}
+
+.pricing-header h1 {
+    color: var(--bs-secondary);
+}
+
+.enterprise-pricing-card {
+    border: 3px solid var(--bs-primary)
+}
+
+.enterprise-card-header {
+    background-color: var(--bs-tertiary)
+}
+
+.pricing-button {
+    background-color: var(--bs-secondary);
+}
+
+.compare-price {
+    color: var(--bs-primary)
 }
