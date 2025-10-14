@@ -7,6 +7,7 @@
 body {
     font-size: 1rem;
     font-family: "Roboto", sans-serif;
+    height: 100vh;
 }
 
 a {
@@ -70,6 +71,7 @@ main {
     box-shadow: 2px 2px 3px 1px rgba(69, 189, 245, 0.5);
     background: linear-gradient(to left, #4fbdf0,#45bdf5);
     transition: all 0.5s ease-out;
+    color: var(--bs-primary);
 }
 
 .card {
@@ -101,6 +103,50 @@ main {
     background-color: var(--bs-secondary);
 }
 
+.pricing-button:hover {
+    background-color: var(--bs-primary);
+    color: #ffffff;
+}
+
 .compare-price {
     color: var(--bs-primary)
+}
+
+.form-container {
+    color: #45bdf5;
+    border-radius: 1rem;
+}
+
+.form-container:hover {
+    cursor: pointer;
+    transform: scale(1.01);
+    transition: all 0.2s ease-out;
+    box-shadow: 2px 2px 3px 1px rgba(0, 0, 0, 0.2);
+}
+
+#emailHelp {
+    color: #ffffff
+}
+
+.name {
+    gap: 1rem;
+}
+
+.first-name, .last-name {
+    flex-basis: 50%;
+}
+
+.submit-button {
+    text-align: center;
+}
+
+#submit-form {
+    width: 80%;
+    background-color: var(--bs-secondary);
+    color: var(--bs-primary);
+}
+
+#submit-form:hover {
+    background-color: var(--bs-tertiary);
+    color: #ffffff;
 }
