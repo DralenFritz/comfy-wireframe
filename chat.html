@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chat</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+
+  <script defer src="chat-functionality.js"></script>
+
+</head>
+
+<body>
+  <header>
+    <div class="collapse hide" id="navbarHeader">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-8 col-md-7 py-4 about-section">
+            <h2>About</h2>
+            <p class="text-body-primary about-desc">Our dating site helps millions find real love.</p>
+            <p class="text-body-primary about-desc">Your search for a great relationship has never been
+              easier with groundbreaking overhaul of the eharmony you know and trust.</p>
+            <p class="text-body-primary about-desc"> Signing up for comfy is the first step in finding your
+              next great relationship. From profile tips to sharing your success story, we are here to
+              support you in your journey for love.</p>
+          </div>
+          <div class="col-sm-4 offset-md-1 py-4 contact-section">
+            <h2>Contact</h2>
+            <ul class="list-unstyled">
+              <li class="mb-2"><a href="#">Follow on X</a></li>
+              <li class="mb-2"><a href="#">Like on Facebook</a></li>
+              <li class="mb-5"><a href="#">Email Us</a></li>
+              <li class="connect"><a href="#">Connect to people abroad</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="navbar navbar-dark bg-dark shadow-sm">
+      <div class="container"> <a href="#" class="navbar-brand d-flex align-items-center"> <img height="45" width="45"
+            src="./comfy.jpeg" alt="comfy's logo" class="comfy-logo">
+          <h3>Comfy</h3>
+        </a> <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHeader"
+          aria-controls="navbarHeader" aria-expanded="true" aria-label="Toggle navigation"><span
+            class="navbar-toggler-icon"></span></button> </div>
+    </div>
+  </header>
+
+
+  <main class="container p-5 chat-box-container">
+
+    <div class="chat-container">
+      <div class="messages" id="messages"></div>
+
+      <div class="input-area">
+        <textarea id="messageInput" placeholder="Type a message..."></textarea>
+        <button type="button" class="btn" id="emojiButton">😊</button>
+        <emoji-picker theme="auto" id="emojiPicker" style="display: none;"></emoji-picker>
+        <button type="button" class="btn" id="sendButton">Send</button>
+      </div>
+
+    </div>
+
+  </main>
+
+
+  <footer class="pt-4 my-md-5 pt-md-3 border-top container">
+    <div class="container">
+      <p class="float-end mb-1"><a href="#">Back to top</a></p>
+      <p class="mb-1">This website is © 2025 Comfy</p>
+      <p class="mb-0">Need to find out more? <a href="/">Visit our instagram</a> or check out our <a
+          href="#">YouTube</a>. </p>
+    </div>
+    <ul class="nav justify-content-center border-bottom pb-3 mb-3 mt-4">
+      <li class="nav-item"> <a href="/" class="nav-link px-2 text-body-secondary">Home</a> </li>
+      <li class="nav-item"> <a href="#" class="nav-link px-2 text-body-secondary">YouTube</a> </li>
+      <li class="nav-item"> <a href="#" class="nav-link px-2 text-body-secondary">Instagram</a> </li>
+      <li class="nav-item"> <a href="#" class="nav-link px-2 text-body-secondary">Facebook</a> </li>
+    </ul>
+    <div class="row mt-4">
+      <div class="col-12 col-md"> <img class="mb-2 comfy-logo" height="45" width="45" src="./comfy.jpeg"
+          alt="comfy's logo" width="24" height="19"> <small class="d-block mb-3 text-body-secondary">©
+          2017-2025</small> </div>
+      <div class="col-6 col-md">
+        <h5>Features</h5>
+        <ul class="list-unstyled text-small">
+          <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Cool stuff</a></li>
+          <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Random feature</a></li>
+          <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Team feature</a></li>
+          <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Another one</a></li>
+          <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Last time</a></li>
+        </ul>
+      </div>
+      <div class="col-6 col-md">
+        <h5>Resources</h5>
+        <ul class="list-unstyled text-small">
+          <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Resource</a></li>
+          <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Resource name</a></li>
+          <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Another resource</a></li>
+          <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Final resource</a></li>
+        </ul>
+      </div>
+      <div class="col-6 col-md">
+        <h5>About</h5>
+        <ul class="list-unstyled text-small">
+          <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Team</a></li>
+          <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Locations</a></li>
+          <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Privacy</a></li>
+          <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Terms</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+    crossorigin="anonymous"></script>
+
+  <script type="module" src="https://cdn.jsdelivr.net/npm/emoji-picker-element@^1/index.js"></script>
+
+</body>
+
+</html>
