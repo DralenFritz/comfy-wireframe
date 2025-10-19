@@ -20,7 +20,7 @@
 
 </head>
 
-<body>
+<body class="d-flex flex-column">
   <header>
     <div class="collapse hide" id="navbarHeader">
       <div class="container">
@@ -57,9 +57,116 @@
   </header>
 
 
-  <main class="container p-5 chat-box-container">
+  <main class="d-flex flex-grow-1">
 
-    <div class="chat-container">
+    <aside class="d-flex flex-column p-3 main-sidebar"> <a href="/"
+        class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+        </svg> <span class="fs-4 ms-4">Sidebar</span> </a>
+      <hr>
+      <ul class="nav nav-pills flex-column mb-auto">
+        <li class="nav-item"> <a href="#" class="nav-link active" aria-current="page"> <svg class="bi pe-none me-2"
+              width="16" height="16" aria-hidden="true">
+              <use xlink:href="#home"></use>
+            </svg>
+            Home
+          </a> </li>
+        <li> <a href="#" class="nav-link text-white"> <svg class="bi pe-none me-2" width="16" height="16"
+              aria-hidden="true">
+              <use xlink:href="#speedometer2"></use>
+            </svg>
+            Dashboard
+          </a> </li>
+        <li> <a href="#" class="nav-link text-white"> <svg class="bi pe-none me-2" width="16" height="16"
+              aria-hidden="true">
+              <use xlink:href="#table"></use>
+            </svg>
+            Orders
+          </a> </li>
+        <li> <a href="#" class="nav-link text-white"> <svg class="bi pe-none me-2" width="16" height="16"
+              aria-hidden="true">
+              <use xlink:href="#grid"></use>
+            </svg>
+            Products
+          </a> </li>
+        <li> <a href="#" class="nav-link text-white"> <svg class="bi pe-none me-2" width="16" height="16"
+              aria-hidden="true">
+              <use xlink:href="#people-circle"></use>
+            </svg>
+            Customers
+          </a> </li>
+      </ul>
+      <hr>
+      <div class="dropdown"> <a href="#"
+          class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" data-bs-toggle="dropdown"
+          aria-expanded="false"> <img src="./comfy.jpeg" alt="" width="32" height="32"
+            class="rounded-circle me-2"> <strong>comfy</strong> </a>
+        <ul class="dropdown-menu dropdown-menu-dark text-small shadow">
+          <li><a class="dropdown-item" href="#">New chat...</a></li>
+          <li><a class="dropdown-item" href="#">Settings</a></li>
+          <li><a class="dropdown-item" href="#">Profile</a></li>
+          <li>
+            <hr class="dropdown-divider">
+          </li>
+          <li><a class="dropdown-item" href="#">Sign out</a></li>
+        </ul>
+      </div>
+    </aside>
+
+    <aside class="d-flex flex-column align-items-stretch bg-body-tertiary chat-sidebar"> 
+      <span class="fs-5 fw-semibold p-3">Chats</span>
+      <div class="list-group list-group-flush border-bottom scrollarea"> <a href="#"
+          class="list-group-item list-group-item-action active py-3 lh-sm" aria-current="true">
+          <div class="d-flex w-100 align-items-center justify-content-between"> <strong class="mb-1">Chat
+              heading</strong> <small>Wed</small> </div>
+          <div class="col-10 mb-1 small">Some placeholder content in a paragraph below the heading and date.</div>
+        </a> <a href="#" class="list-group-item list-group-item-action py-3 lh-sm">
+          <div class="d-flex w-100 align-items-center justify-content-between"> <strong class="mb-1">Chat
+              heading</strong> <small class="text-body-secondary">Tues</small> </div>
+          <div class="col-10 mb-1 small">Some placeholder content in a paragraph below the heading and date.</div>
+        </a> <a href="#" class="list-group-item list-group-item-action py-3 lh-sm">
+          <div class="d-flex w-100 align-items-center justify-content-between"> <strong class="mb-1">Chat
+              heading</strong> <small class="text-body-secondary">Mon</small> </div>
+          <div class="col-10 mb-1 small">Some placeholder content in a paragraph below the heading and date.</div>
+        </a> <a href="#" class="list-group-item list-group-item-action py-3 lh-sm" aria-current="true">
+          <div class="d-flex w-100 align-items-center justify-content-between"> <strong class="mb-1">Chat
+              heading</strong> <small class="text-body-secondary">Wed</small> </div>
+          <div class="col-10 mb-1 small">Some placeholder content in a paragraph below the heading and date.</div>
+        </a> <a href="#" class="list-group-item list-group-item-action py-3 lh-sm">
+          <div class="d-flex w-100 align-items-center justify-content-between"> <strong class="mb-1">Chat
+              heading</strong> <small class="text-body-secondary">Tues</small> </div>
+          <div class="col-10 mb-1 small">Some placeholder content in a paragraph below the heading and date.</div>
+        </a> <a href="#" class="list-group-item list-group-item-action py-3 lh-sm">
+          <div class="d-flex w-100 align-items-center justify-content-between"> <strong class="mb-1">Chat
+              heading</strong> <small class="text-body-secondary">Mon</small> </div>
+          <div class="col-10 mb-1 small">Some placeholder content in a paragraph below the heading and date.</div>
+        </a> <a href="#" class="list-group-item list-group-item-action py-3 lh-sm" aria-current="true">
+          <div class="d-flex w-100 align-items-center justify-content-between"> <strong class="mb-1">Chat
+              heading</strong> <small class="text-body-secondary">Wed</small> </div>
+          <div class="col-10 mb-1 small">Some placeholder content in a paragraph below the heading and date.</div>
+        </a> <a href="#" class="list-group-item list-group-item-action py-3 lh-sm">
+          <div class="d-flex w-100 align-items-center justify-content-between"> <strong class="mb-1">Chat
+              heading</strong> <small class="text-body-secondary">Tues</small> </div>
+          <div class="col-10 mb-1 small">Some placeholder content in a paragraph below the heading and date.</div>
+        </a> <a href="#" class="list-group-item list-group-item-action py-3 lh-sm">
+          <div class="d-flex w-100 align-items-center justify-content-between"> <strong class="mb-1">Chat
+              heading</strong> <small class="text-body-secondary">Mon</small> </div>
+          <div class="col-10 mb-1 small">Some placeholder content in a paragraph below the heading and date.</div>
+        </a> <a href="#" class="list-group-item list-group-item-action py-3 lh-sm" aria-current="true">
+          <div class="d-flex w-100 align-items-center justify-content-between"> <strong class="mb-1">Chat
+              heading</strong> <small class="text-body-secondary">Wed</small> </div>
+          <div class="col-10 mb-1 small">Some placeholder content in a paragraph below the heading and date.</div>
+        </a> <a href="#" class="list-group-item list-group-item-action py-3 lh-sm">
+          <div class="d-flex w-100 align-items-center justify-content-between"> <strong class="mb-1">Chat
+              heading</strong> <small class="text-body-secondary">Tues</small> </div>
+          <div class="col-10 mb-1 small">Some placeholder content in a paragraph below the heading and date.</div>
+        </a> <a href="#" class="list-group-item list-group-item-action py-3 lh-sm">
+          <div class="d-flex w-100 align-items-center justify-content-between"> <strong class="mb-1">Chat
+              heading</strong> <small class="text-body-secondary">Mon</small> </div>
+          <div class="col-10 mb-1 small">Some placeholder content in a paragraph below the heading and date.</div>
+        </a> </div>
+      </aside>
+
+    <div class="chat-container d-flex flex-column justify-content-between">
       <div class="messages" id="messages"></div>
 
       <div class="input-area">

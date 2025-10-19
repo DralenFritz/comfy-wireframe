@@ -20,7 +20,8 @@ a {
     color: #45bdf5;
 }
 
-.about-section h2, .contact-section h2 {
+.about-section h2,
+.contact-section h2 {
     color: #ffffff;
 }
 
@@ -69,7 +70,7 @@ li a {
     cursor: pointer;
     transform: scale(1.05);
     box-shadow: 2px 2px 3px 1px rgba(69, 189, 245, 0.5);
-    background: linear-gradient(to left, #4fbdf0,#45bdf5);
+    background: linear-gradient(to left, #4fbdf0, #45bdf5);
     transition: all 0.5s ease-out;
     color: var(--bs-primary);
 }
@@ -113,6 +114,7 @@ li a {
 }
 
 .form-container {
+    background: linear-gradient(to right, #031c24, #0c3e4f);
     color: #45bdf5;
     border-radius: 1rem;
 }
@@ -132,7 +134,8 @@ li a {
     gap: 1rem;
 }
 
-.first-name, .last-name {
+.first-name,
+.last-name {
     flex-basis: 50%;
 }
 
@@ -151,6 +154,12 @@ li a {
     color: #ffffff;
 }
 
+.main-sidebar {
+    background-color: var(--bs-primary);
+    flex-basis: 20%;
+    height: 100%;
+}
+
 emoji-picker {
     position: absolute;
     bottom: 60px;
@@ -160,54 +169,58 @@ emoji-picker {
 }
 
 .chat-container {
-  width: 470px;
-  margin: 2rem auto;
-  border: 1px solid #ccc;
-  border-radius: 12px;
-  padding: 1rem;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 12px;
+    padding: 1.5rem;
 }
 
 .messages {
-  height: 200px;
-  overflow-y: auto;
-  border-bottom: 1px solid #eee;
-  margin-bottom: 1rem;
+    height: 100%;
+    overflow-y: auto;
+    margin-bottom: 1rem;
 }
 
 .input-area {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    border-top: 1px solid #eee;
+    padding-top: 1rem;
 }
 
 textarea {
-  flex: 1;
-  height: 2.5rem;
-  resize: none;
-  padding: 0.5rem;
+    flex-basis: 80%;
+    height: 2.5rem;
+    resize: none;
+    padding: 0.5rem;
+    overflow-y: auto;
 }
 
 #emojiButton {
-  background-color: var(--bs-secondary);
+    background-color: var(--bs-secondary);
+    flex-basis: 8%;
 }
 
 #sendButton {
-  background-color: var(--bs-secondary);
+    background-color: var(--bs-secondary);
+    flex-basis: 12%;
 }
 
 .chat-box-container {
     margin-bottom: 12rem;
 }
 
-emoji-picker::before {
+emoji-picker::after {
     content: "";
     position: absolute;
-    top: -10%; 
+    bottom: -1;
     left: 50%;
     margin-left: -5px;
     border-width: 13px;
     border-style: solid;
-    border-color: transparent transparent var(--bs-primary) transparent;
+    border-color: var(--bs-primary) transparent transparent transparent;
     transform: translateX(-50%);
 }
 
@@ -217,8 +230,8 @@ emoji-picker {
     --button-active-background: var(--bs-tertiary);
     --button-hover-background: var(--bs-secondary);
     position: absolute;
-    top: 445px;
-    left: 46.3%;
+    bottom: 100%;
+    right: 0;
     z-index: 100;
     max-height: 300px;
 }
