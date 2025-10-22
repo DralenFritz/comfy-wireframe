@@ -154,10 +154,20 @@ li a {
     color: #ffffff;
 }
 
+.chats {
+    height: calc(100% - 71px);
+}
+
 .main-sidebar {
     background-color: var(--bs-primary);
     flex-basis: 20%;
     height: 100%;
+}
+
+.chat-sidebar {
+    display: flex;
+    flex-basis: 80%;
+    overflow-y: auto;
 }
 
 emoji-picker {
@@ -169,9 +179,9 @@ emoji-picker {
 }
 
 .chat-container {
+    display: none;
     width: 100%;
     border: 1px solid #ccc;
-    border-radius: 12px;
     padding: 1.5rem;
 }
 
@@ -179,6 +189,10 @@ emoji-picker {
     height: 100%;
     overflow-y: auto;
     margin-bottom: 1rem;
+}
+
+.messages p {
+    margin-bottom: 0.2rem;
 }
 
 .input-area {
@@ -238,4 +252,18 @@ emoji-picker {
 
 .search input {
     color: var(--bs-primary);
+}
+
+@media screen and (min-width: 48rem) {
+    
+    .chat-sidebar {
+        flex-basis: 55%;
+    }
+}
+
+@media screen and (min-width: 62rem) {
+
+    .form-container {
+        max-width: 960px;
+    }
 }
