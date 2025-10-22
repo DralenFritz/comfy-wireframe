@@ -4,10 +4,13 @@ const input = document.getElementById('messageInput');
 const sendButton = document.getElementById('sendButton');
 const messageArea = document.getElementById('messages');
 
+const sectionsNavbar = document.querySelector('.main-sidebar');
+const sectionsNavbarMobile = document.querySelector('.main-sidebar-mobile');
 
 const sectionsNavLinks = document.querySelectorAll('.nav-pills .nav-link');
 let currentlySelectedNavLink = document.querySelectorAll('.nav-pills .nav-link.active');
 const homeSection = sectionsNavLinks[0];
+const homeSectionMobile = sectionsNavLinks[5];
 
 const chatSidebar = document.querySelector('.chat-sidebar');
 const chatHeaders = document.querySelectorAll('.list-group-item');
@@ -51,21 +54,41 @@ homeSection.addEventListener('click', () => {
     chatContainer.style.display = 'none';
 })
 
+homeSectionMobile.addEventListener('click', () => {
+    chatSidebar.style.display = 'flex';
+
+    chatContainer.style.display = 'none';
+
+    sectionsNavbar.style.display = 'flex';
+    sectionsNavbarMobile.style.display = 'none';
+})
+
 // make it so that on mobile ver, the user clicks a chat and the message container shows up
 // also on desktop, so that the placeholder text showing the most recent chat, shows up in the message container
 
 function mobileView() {
+
+    if (chatSidebar.style.display === 'flex') {
+        chatContainer.style.display = 'none';
+    }
+
     chatHeaders.forEach(chatHeader => {
         chatHeader.addEventListener('click', () => {
             chatSidebar.style.display = 'none';
 
             chatContainer.style.display = 'flex';
             homeSection.classList.remove('active');
+
+            sectionsNavbar.style.display = 'none';
+            sectionsNavbarMobile.style.display = 'flex';
         });
     });
 }
 
 function desktopView() {
+    sectionsNavbar.style.display = 'flex';
+    sectionsNavbarMobile.style.display = 'none';
+
     function chatHeaderClicked(chatHeader) {
         chatHeaders.forEach(chatHeader => {
             chatHeader.classList.remove('active');
@@ -75,6 +98,9 @@ function desktopView() {
         chatHeader.classList.add('active');
         chatHeader.setAttribute("aria-current", "true");
         currentlySelectedChatHeader = chatHeader;
+        
+        sectionsNavbar.style.display = 'flex';
+        sectionsNavbarMobile.style.display = 'none';
     }
 
     chatHeaders.forEach((chatHeader) => {
@@ -90,7 +116,7 @@ function handleViewChange() {
         mobileView();
     } else {
         desktopView();
-        chatSidebar.style.display = '';
+        chatSidebar.style.display = 'flex';
         homeSection.classList.remove('active');
     }
 }

@@ -159,14 +159,26 @@ li a {
 }
 
 .main-sidebar {
+    display: flex;
     background-color: var(--bs-primary);
     flex-basis: 20%;
     height: 100%;
 }
 
+.main-sidebar-mobile {
+    display: none;
+    background-color: var(--bs-primary);
+    flex-basis: 2%;
+    height: 100%;
+}
+
+.link-mobile {
+    padding: 0.5rem 0.2rem
+}
+
 .chat-sidebar {
     display: flex;
-    flex-basis: 80%;
+    width: 100%;
     overflow-y: auto;
 }
 
@@ -176,6 +188,7 @@ emoji-picker {
     right: 20px;
     z-index: 100;
     max-height: 300px;
+    --input-font-color: var(--bs-primary);
 }
 
 .chat-container {
@@ -183,6 +196,7 @@ emoji-picker {
     width: 100%;
     border: 1px solid #ccc;
     padding: 1.5rem;
+    overflow-y: auto;
 }
 
 .messages {
@@ -222,10 +236,6 @@ textarea {
     flex-basis: 12%;
 }
 
-.chat-box-container {
-    margin-bottom: 12rem;
-}
-
 emoji-picker::after {
     content: "";
     position: absolute;
@@ -250,7 +260,7 @@ emoji-picker {
     max-height: 300px;
 }
 
-.search input {
+input.search {
     color: var(--bs-primary);
 }
 
