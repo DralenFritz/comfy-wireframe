@@ -8,6 +8,7 @@ body {
     font-size: 1rem;
     font-family: "Roboto", sans-serif;
     height: 100vh;
+    width: 100vw;
 }
 
 a {
@@ -113,21 +114,62 @@ li a {
     color: var(--bs-primary)
 }
 
-.form-container {
-    background: linear-gradient(to right, #031c24, #0c3e4f);
-    color: #45bdf5;
-    border-radius: 1rem;
+.form-background {
+    height: 800px;
+    width: 100%;
 }
 
-.form-container:hover {
+.form-bg-top {
+    background: linear-gradient(to right, #031c24, #0c3e4f);
+}
+
+.form-container {
+    width: 100%;
+    top: 0;
+}
+
+/* fix position issue */
+
+.form-content {
+    border: 1px solid var(--bs-secondary);
+    color: var(--bs-primary);
+    border-radius: 1rem;
+    background-color: #ffffff;
+}
+
+.form-content:hover {
     cursor: pointer;
     transform: scale(1.01);
     transition: all 0.2s ease-out;
     box-shadow: 2px 2px 3px 1px rgba(0, 0, 0, 0.2);
 }
 
+label:not(.form-check-label)::after, .consent-label::after, legend::after {
+    content: " *";
+    color: var(--bs-secondary);
+}
+
+#personal-details, #location-details, #payment-header {
+    margin-top: 2rem;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--bs-primary);
+}
+
+#personal-details {
+    margin-top: 0;
+}
+
+#payment-header-p {
+    color: #99a1af;
+}
+
+.payment-option[type=checkbox] {
+    border-radius: 50%;
+}
+
 #emailHelp {
-    color: #ffffff
+    color: var(--bs-tertiary);
 }
 
 .name {
@@ -275,5 +317,8 @@ input.search {
 
     .form-container {
         max-width: 960px;
+        top: 85%;
+        left: 50%;
+        transform: translate(-50%, -50%);
     }
 }
