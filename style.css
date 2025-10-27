@@ -123,12 +123,10 @@ li a {
     background: linear-gradient(to right, #031c24, #0c3e4f);
 }
 
-.form-container {
+.form-container, .payment-form-container {
     width: 100%;
     top: 0;
 }
-
-/* fix position issue */
 
 .form-content {
     border: 1px solid var(--bs-secondary);
@@ -138,8 +136,7 @@ li a {
 }
 
 .form-content:hover {
-    cursor: pointer;
-    transform: scale(1.01);
+    transform: scale(1.005);
     transition: all 0.2s ease-out;
     box-shadow: 2px 2px 3px 1px rgba(0, 0, 0, 0.2);
 }
@@ -149,8 +146,18 @@ label:not(.form-check-label)::after, .consent-label::after, legend::after {
     color: var(--bs-secondary);
 }
 
-#personal-details, #location-details, #payment-header {
+input:hover {
+    cursor: pointer;
+}
+
+#personal-details, #location-details {
     margin-top: 2rem;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--bs-primary);
+}
+
+#payment-header {
     font-size: 1.25rem;
     font-weight: 700;
     color: var(--bs-primary);
@@ -172,12 +179,16 @@ label:not(.form-check-label)::after, .consent-label::after, legend::after {
     color: var(--bs-tertiary);
 }
 
-.name {
+.name, .email-password, .number-gender {
     gap: 1rem;
 }
 
 .first-name,
-.last-name {
+.last-name,
+.email,
+.password,
+.phone-no,
+.gender {
     flex-basis: 50%;
 }
 
@@ -185,13 +196,13 @@ label:not(.form-check-label)::after, .consent-label::after, legend::after {
     text-align: center;
 }
 
-#submit-form {
+#submit-form, #submit-payment-form {
     width: 80%;
     background-color: var(--bs-secondary);
     color: var(--bs-primary);
 }
 
-#submit-form:hover {
+#submit-form:hover, #submit-payment-form:hover {
     background-color: var(--bs-tertiary);
     color: #ffffff;
 }
@@ -315,10 +326,14 @@ input.search {
 
 @media screen and (min-width: 62rem) {
 
-    .form-container {
+    .form-container, .payment-form-container {
         max-width: 960px;
-        top: 85%;
+        top: 60%;
         left: 50%;
         transform: translate(-50%, -50%);
+    }
+
+    .payment-form-container {
+        top: 30%;
     }
 }
