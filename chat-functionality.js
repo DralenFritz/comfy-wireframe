@@ -63,9 +63,6 @@ homeSectionMobile.addEventListener('click', () => {
     sectionsNavbarMobile.style.display = 'none';
 })
 
-// make it so that on mobile ver, the user clicks a chat and the message container shows up
-// also on desktop, so that the placeholder text showing the most recent chat, shows up in the message container
-
 function mobileView() {
 
     if (chatSidebar.style.display === 'flex') {
