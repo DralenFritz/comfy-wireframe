@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Comfy</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+  
+  <header>
+    <div class="collapse hide" id="navbarHeader">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-8 col-md-7 py-4 about-section">
+            <h2>About</h2>
+            <p class="text-body-primary about-desc">Our dating site helps millions find real love.</p>
+            <p class="text-body-primary about-desc">Your search for a great relationship has never been easier with
+              groundbreaking overhaul of the comfy you know and trust.</p>
+            <p class="text-body-primary about-desc"> Signing up for comfy is the first step in finding your next great
+              relationship. From profile tips to sharing your success story, we are here to support you in your journey
+              for love.</p>
+
+              <div id="google_translate_element"></div>
+          </div>
+          <div class="col-sm-4 offset-md-1 py-4 contact-section">
+            <h2>Contact</h2>
+            <ul class="list-unstyled">
+              <li class="mb-2"><a href="#">Follow on X</a></li>
+              <li class="mb-2"><a href="#">Like on Facebook</a></li>
+              <li class="mb-5"><a href="#">Email Us</a></li>
+              <li class="connect"><a href="#">Connect to people abroad</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="navbar navbar-dark bg-dark shadow-sm">
+      <div class="container">
+        <a href="/index.html" class="navbar-brand d-flex align-items-center">
+          <img height="45" width="45" src="./images/comfy.jpeg" alt="comfy's logo" class="comfy-logo">
+          <h3>Comfy</h3>
+        </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHeader"
+          aria-controls="navbarHeader" aria-expanded="true" aria-label="Toggle navigation"><span
+            class="navbar-toggler-icon"></span></button>
+      </div>
+    </div>
+
+  </header>
+
+  <div class="form-background position-relative">
+    <div class="form-bg-top h-25">
+
+    </div>
+
+
+    <div class="address position-absolute p-3">
+      <div class="address-qr-code">
+        <img src="./images/comfy-wallet-address.jpeg" alt="USDT address QR code" class="address-qr-code-img">
+      </div>
+
+      <input type="text" id="address-no" class="form-control" value="0xd90db8abc75af3ec01ea70c362c8febe77dcddbc" readonly>
+      <button id="copy-address" class="btn">Copy to clipboard</button>
+    </div>
+  </div>
+
+
+  <script>
+    const copyAddressBtn = document.getElementById('copy-address');
+    const input = document.getElementById('address-no');
+
+    copyAddressBtn.addEventListener('click', () => {
+      input.select();
+      input.setSelectionRange(0, 99999);
+
+      navigator.clipboard.writeText(input.value)
+        .then(() => {
+          alert('Address copied to clipboard!');
+        })
+        .catch(err => {
+          console.error('Failed to copy: ', err);
+        });
+    });
+  </script>
+</body>
+
+</html>
