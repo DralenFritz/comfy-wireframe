@@ -16,8 +16,6 @@
 
   <link rel="stylesheet" href="style.css">
 
-  <script defer src="chat-functionality.js"></script>
-
 </head>
 
 <body class="d-flex flex-column">
@@ -47,7 +45,7 @@
       </div>
     </div>
     <div class="navbar navbar-dark bg-dark shadow-sm">
-      <div class="container"> <a href="/index.html" class="navbar-brand d-flex align-items-center"> <img height="45" width="45"
+      <div class="container"> <a href="/" class="navbar-brand d-flex align-items-center"> <img height="45" width="45"
             src="./images/comfy.jpeg" alt="comfy's logo" class="comfy-logo">
           <h3>Comfy</h3>
         </a> <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHeader"
@@ -192,6 +190,129 @@
     </div>
 
   </main>
+
+  <script>
+    const picker = document.getElementById('emojiPicker');
+    const emojiButton = document.getElementById('emojiButton');
+    const input = document.getElementById('messageInput');
+    const sendButton = document.getElementById('sendButton');
+    const messageArea = document.getElementById('messages');
+
+    const sectionsNavbar = document.querySelector('.main-sidebar');
+    const sectionsNavbarMobile = document.querySelector('.main-sidebar-mobile');
+
+    const sectionsNavLinks = document.querySelectorAll('.nav-pills .nav-link');
+    let currentlySelectedNavLink = document.querySelectorAll('.nav-pills .nav-link.active');
+    const homeSection = sectionsNavLinks[0];
+    const homeSectionMobile = sectionsNavLinks[5];
+
+    const chatSidebar = document.querySelector('.chat-sidebar');
+    const chatHeaders = document.querySelectorAll('.list-group-item');
+    let currentlySelectedChatHeader = document.querySelector('.list-group-item.active');
+
+    const chatContainer = document.querySelector('.chat-container');
+
+    emojiButton.addEventListener('click', () => {
+        picker.style.display = picker.style.display === 'none' ? 'block' : 'none';
+    });
+
+    picker.addEventListener('emoji-click', event => {
+        input.value += event.detail.unicode;
+        picker.style.display = 'none';
+    });
+
+    sendButton.addEventListener('click', () => {
+        const newText = document.createElement('p');
+        newText.textContent = input.value
+        messageArea.append(newText);
+        input.value = ''
+    });
+
+    function navLinkClicked(navLink) {   
+        sectionsNavLinks.forEach(navLink => {
+            navLink.classList.remove('active');
+            navLink.removeAttribute('aria-current');
+        });
+        navLink.classList.add('active')
+        navLink.setAttribute("aria-current", "page");
+        currentlySelectedNavLink = navLink;
+    }
+
+    sectionsNavLinks.forEach((navLink) => {
+        navLink.addEventListener('click', () => navLinkClicked(navLink));
+    });
+
+    homeSection.addEventListener('click', () => {
+        chatSidebar.style.display = 'flex';
+
+        chatContainer.style.display = 'none';
+    })
+
+    homeSectionMobile.addEventListener('click', () => {
+        chatSidebar.style.display = 'flex';
+
+        chatContainer.style.display = 'none';
+
+        sectionsNavbar.style.display = 'flex';
+        sectionsNavbarMobile.style.display = 'none';
+    })
+
+    function mobileView() {
+
+        if (chatSidebar.style.display === 'flex') {
+            chatContainer.style.display = 'none';
+        }
+
+        chatHeaders.forEach(chatHeader => {
+            chatHeader.addEventListener('click', () => {
+                chatSidebar.style.display = 'none';
+
+                chatContainer.style.display = 'flex';
+                homeSection.classList.remove('active');
+
+                sectionsNavbar.style.display = 'none';
+                sectionsNavbarMobile.style.display = 'flex';
+            });
+        });
+    }
+
+    function desktopView() {
+        sectionsNavbar.style.display = 'flex';
+        sectionsNavbarMobile.style.display = 'none';
+
+        function chatHeaderClicked(chatHeader) {
+            chatHeaders.forEach(chatHeader => {
+                chatHeader.classList.remove('active');
+                chatHeader.removeAttribute('aria-current');
+            });
+            chatSidebar.style.display = 'flex';
+            chatHeader.classList.add('active');
+            chatHeader.setAttribute("aria-current", "true");
+            currentlySelectedChatHeader = chatHeader;
+            
+            sectionsNavbar.style.display = 'flex';
+            sectionsNavbarMobile.style.display = 'none';
+        }
+
+        chatHeaders.forEach((chatHeader) => {
+            chatHeader.addEventListener('click', () => chatHeaderClicked(chatHeader));
+        });
+    }
+
+    window.addEventListener('resize', handleViewChange);
+    handleViewChange()
+
+    function handleViewChange() {
+        if (window.innerWidth < 768) {
+            mobileView();
+        } else {
+            desktopView();
+            chatSidebar.style.display = 'flex';
+            homeSection.classList.remove('active');
+        }
+    }
+
+  </script>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"

@@ -49,7 +49,7 @@
 
     <div class="navbar navbar-dark bg-dark shadow-sm">
       <div class="container">
-        <a href="/index.html" class="navbar-brand d-flex align-items-center">
+        <a href="/" class="navbar-brand d-flex align-items-center">
           <img height="45" width="45" src="./images/comfy.jpeg" alt="comfy's logo" class="comfy-logo">
           <h3>Comfy</h3>
         </a>
@@ -74,10 +74,10 @@
         <h2 id="payment-header">Stake your commitment fee</h2>
         <p id="payment-header-p">Choose your most preferred form of payment</p>
 
-        <form action="crypto-address.html" method="get">
+        <form action="/payment" method="post" enctype="application/x-www-form-urlencoded">
 
           <div class="form-check">
-            <input class="form-check-input payment-option" id="payment-option1" type="radio" name="payment">
+            <input class="form-check-input payment-option" id="payment-option1" type="radio" name="payment" value="crypto">
             <label class="form-check-label mb-1" for="payment-option1">
               Pay with Crypto ($6)
             </label><br>
@@ -90,7 +90,7 @@
           </div>
 
           <div class="form-check mb-4">
-            <input class="form-check-input payment-option" id="payment-option2" type="radio" name="payment">
+            <input class="form-check-input payment-option" id="payment-option2" type="radio" name="payment" value="local-currency">
             <label class="form-check-label mb-1" for="payment-option2">
               Pay with Local Currency
             </label><br>

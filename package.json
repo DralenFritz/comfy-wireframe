@@ -1,0 +1,29 @@
+{
+  "name": "comfy-wireframe",
+  "version": "1.0.0",
+  "description": "",
+  "main": "chat-functionality.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js",
+    "dev": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DralenFritz/comfy-wireframe.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/DralenFritz/comfy-wireframe/issues"
+  },
+  "homepage": "https://github.com/DralenFritz/comfy-wireframe#readme",
+  "dependencies": {
+    "express": "^5.2.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+  }
+}
